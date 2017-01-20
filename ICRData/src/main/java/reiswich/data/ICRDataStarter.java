@@ -33,16 +33,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import reiswich.data.receiver.Receiver;
+import reiswich.io.QueueDefinition;
 
 @SpringBootApplication
 public class ICRDataStarter {
 
-    public final static String dataQueue = "data-queue";
     private static Logger logger =  LoggerFactory.getLogger(ICRDataStarter.class);
 
     @Bean
     Queue queue() {
-        return new Queue(dataQueue, false);
+        return new Queue(QueueDefinition.DATA_QUEUE, false);
     }
 
     @Bean
@@ -52,7 +52,7 @@ public class ICRDataStarter {
 
     @Bean
     Binding binding(Queue queue, TopicExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(dataQueue);
+        return BindingBuilder.bind(queue).to(exchange).with(QueueDefinition.DATA_QUEUE);
     }
 
     @Bean
@@ -68,7 +68,7 @@ public class ICRDataStarter {
                                              MessageListenerAdapter listenerAdapter) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(dataQueue);
+        container.setQueueNames(QueueDefinition.DATA_QUEUE);
         container.setMessageListener(listenerAdapter);
         return container;
     }

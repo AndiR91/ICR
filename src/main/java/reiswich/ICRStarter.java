@@ -32,19 +32,18 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import reiswich.io.QueueDefinition;
 import reiswich.receiver.Receiver;
 
 @SpringBootApplication
 public class ICRStarter {
 
-    public final static String dataQueue = "data-queue";
-    public final static String controlQueue = "control-queue";
 
     private static Logger logger =  LoggerFactory.getLogger(ICRStarter.class);
 
     @Bean
     Queue queue() {
-        return new Queue(controlQueue, false);
+        return new Queue(QueueDefinition.CONTROL_QUEUE, false);
     }
 
     @Bean
@@ -54,7 +53,7 @@ public class ICRStarter {
 
     @Bean
     Binding binding(Queue queue, TopicExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(dataQueue);
+        return BindingBuilder.bind(queue).to(exchange).with(QueueDefinition.DATA_QUEUE);
     }
 
     @Bean
@@ -70,7 +69,7 @@ public class ICRStarter {
                                              MessageListenerAdapter listenerAdapter) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(controlQueue);
+        container.setQueueNames(QueueDefinition.CONTROL_QUEUE);
         container.setMessageListener(listenerAdapter);
         return container;
     }
