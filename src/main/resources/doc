@@ -1,0 +1,26 @@
+20.01.2017
+https://spring.io/guides/gs/messaging-rabbitmq/
+- Setting up RabbitMQ
+- Dependency was missing:
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>4.3.4.RELEASE</version>
+</dependency>
+- No main manifest attribute problem:
+http://stackoverflow.com/questions/9689793/cant-execute-jar-file-no-main-manifest-attribute
+- .gitignore from
+https://github.com/spring-projects/spring-boot/blob/master/.gitignore
+- license ideas
+http://softwareengineering.stackexchange.com/questions/234511/what-is-the-best-practice-for-arranging-third-party-library-licenses-paperwork
+- rabbitmq management tool
+https://www.rabbitmq.com/management.html
+- rabbitmq access user control
+http://stackoverflow.com/questions/26811924/spring-amqp-rabbitmq-3-3-5-access-refused-login-was-refused-using-authentica/26820152
+- spring-amqp doc defaultConnectionFactory
+http://docs.spring.io/spring-amqp/reference/htmlsingle/#_cachingconnectionfactory_changes
+- rabbitmq get message
+http://stackoverflow.com/questions/10709533/is-it-possible-to-view-rabbitmq-message-contents-directly-from-the-command-line
+- failed to invoke target method error
+http://stackoverflow.com/questions/23240863/execution-of-rabbit-message-listener-failed-and-no-errorhandler-has-been-set-f
+
