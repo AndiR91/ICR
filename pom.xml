@@ -26,6 +26,7 @@
   <modules>
     <module>ICRData</module>
     <module>ICRCommon</module>
+    <module>ICRRest</module>
   </modules>
   <packaging>pom</packaging>
 

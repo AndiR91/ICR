@@ -28,3 +28,7 @@ http://stackoverflow.com/questions/23240863/execution-of-rabbit-message-listener
 - Object transmit and receiving problem
 http://stackoverflow.com/questions/18526571/how-to-send-consume-object-in-spring-amqp
 https://gist.github.com/garyrussell/c86d22f6e00a526aec37
+- Starting REST
+http://docs.spring.io/spring-amqp/reference/html/_reference.html#_rabbitconnectionfactorybean_and_configuring_ssl
+https://spring.io/guides/gs/rest-service/
+https://github.com/spring-guides/gs-rest-service
