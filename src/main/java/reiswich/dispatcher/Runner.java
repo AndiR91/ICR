@@ -25,6 +25,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 import reiswich.io.QueueDefinition;
+import reiswich.io.data.Weather;
 import reiswich.receiver.Receiver;
 
 @Component
@@ -44,7 +45,8 @@ public class Runner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Sending message...");
-        rabbitTemplate.convertAndSend(QueueDefinition.DATA_QUEUE, "Hello from RabbitMQ!");
+        Weather w = new Weather(2.5, 2.3);
+        rabbitTemplate.convertAndSend(QueueDefinition.DATA_QUEUE, w);
         receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
         //context.close();
     }

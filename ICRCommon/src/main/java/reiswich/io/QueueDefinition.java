@@ -1,7 +1,5 @@
 /*
- * Copyright (c) 2013 GoPivotal, Inc. All Rights Reserved
- *
- * Modifications copyright (c) 2016 Andreas Reiswich
+ * Copyright (c) 2017 Andreas Reiswich. All Rights Reserved
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

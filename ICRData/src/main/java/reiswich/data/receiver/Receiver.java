@@ -19,6 +19,7 @@
 package reiswich.data.receiver;
 
 import org.springframework.stereotype.Component;
+import reiswich.io.data.Weather;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -27,8 +28,13 @@ public class Receiver {
 
     private CountDownLatch latch = new CountDownLatch(1);
 
-    public void receiveMessage(String message) {
-        System.out.println("Received message: " + message);
+    /**
+     * Receiving messages, that are sent through Spring AMQP.
+     * Based on idea: http://stackoverflow.com/questions/18526571/how-to-send-consume-object-in-spring-amqp, Gary Russel
+     * @param message message that is sent.
+     */
+    public void receiveMessage(Weather message) {
+        System.out.println("Received message: " + message.getTemperature());
         latch.countDown();
     }
 
