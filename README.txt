@@ -9,8 +9,9 @@ HowTo:
    - rabbitmq-server
 3. Enable rabbitmq-management
    - rabbitmq-plugins enable rabbitmq_management
-4. Visit the admin page on localhost
-   - localhost:15672
+4. Visit the management page on localhost and create a user "admin" with password "admin". 
+   Please make sure to change this for production. Hardcoded credentials will be removed later =).
+   - localhost:15672
 5. Run IRCData
    - ICRDataStarter Class
 6. Run ICR
