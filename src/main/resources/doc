@@ -24,3 +24,7 @@ http://stackoverflow.com/questions/10709533/is-it-possible-to-view-rabbitmq-mess
 - failed to invoke target method error
 http://stackoverflow.com/questions/23240863/execution-of-rabbit-message-listener-failed-and-no-errorhandler-has-been-set-f
 
+22.01.2017
+- Object transmit and receiving problem
+http://stackoverflow.com/questions/18526571/how-to-send-consume-object-in-spring-amqp
+https://gist.github.com/garyrussell/c86d22f6e00a526aec37
